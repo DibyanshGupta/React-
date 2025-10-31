@@ -19,6 +19,15 @@ function App() {
   const removeValue = () => {
     if(counter  > 0)setCounter(counter-1);
     console.log("value removed ", Math.random())
+
+    // if we do setCounter(counter-1) multiple times it will still get updated for 1 time as react will consider it as same state running multiple times
+    // if we want to see the changes do as follows
+    // setCounter(prevCounter => prevCounter -1)
+    // setCounter(prevCounter => prevCounter -1)
+    // setCounter(prevCounter => prevCounter -1)
+    // setCounter(prevCounter => prevCounter -1)
+
+    // if you do as above counter value will be decreased by 4 
   }
 
   return (
